@@ -7,11 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Notes.Application.Common.Mappings;
 using Notes.Application.Interfaces;
 using Notes.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace Notes.WebApi
 {
@@ -57,6 +53,8 @@ namespace Notes.WebApi
             }
 
             app.UseRouting();
+            app.UseHttpsRedirection();
+            app.UseCors("AllowAll");
 
             app.UseEndpoints(endpoints =>
             {
