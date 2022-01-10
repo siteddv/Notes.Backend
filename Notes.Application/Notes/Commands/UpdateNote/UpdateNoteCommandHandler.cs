@@ -4,7 +4,6 @@ using Notes.Application.Common.Exceptions;
 using Notes.Application.Interfaces;
 using Notes.Domain;
 using System;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
