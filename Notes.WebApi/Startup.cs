@@ -32,6 +32,7 @@ namespace Notes.WebApi
 
             services.AddApplication();
             services.AddPersistence(Configuration);
+            services.AddControllers();
 
             services.AddCors(options =>
             {
@@ -58,10 +59,7 @@ namespace Notes.WebApi
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllers();
             });
         }
     }

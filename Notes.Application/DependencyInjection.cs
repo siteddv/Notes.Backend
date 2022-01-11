@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using Notes.Application.Interfaces;
 using System.Reflection;
 
 namespace Notes.Persistence
