@@ -4,3 +4,5 @@
 
 /Notes.Identity/Notes.Identity/obj
 /Notes.Identity/.vs/Notes.Identity
+/Notes.Identity/Notes.Identity/bin/Debug/net5.0
+*.jwk
