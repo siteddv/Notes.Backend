@@ -1,4 +1,5 @@
 ﻿using IdentityModel;
+using IdentityServer4;
 using IdentityServer4.Models;
 using System.Collections.Generic;
 
@@ -25,6 +26,38 @@ namespace Notes.Identity
                 new ApiResource("NotesWebAPI", "Web API", new[] { JwtClaimTypes.Name })
                 {
                     Scopes = {"NotesWebApi"}
+                }
+            };
+
+        public static IEnumerable<Client> Clients =>
+            new List<Client>
+            {
+                new Client
+                {
+                    ClientId = "notes-web-api",
+                    ClientName = "Notes Web",
+                    AllowedGrantTypes = GrantTypes.Code,
+                    RequireClientSecret = false,
+                    RequirePkce = true,
+                    RedirectUris =
+                    {
+                        "http://.../signin-oidc"
+                    },
+                    AllowedCorsOrigins =
+                    {
+                        "http://..."
+                    },
+                    PostLogoutRedirectUris =
+                    {
+                        "http:/.../signout-oidc"
+                    },
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "NotesWebAPI"
+                    },
+                    AllowAccessTokensViaBrowser = true
                 }
             };
     }
