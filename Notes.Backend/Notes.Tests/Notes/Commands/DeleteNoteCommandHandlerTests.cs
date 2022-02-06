@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using Notes.Application.Notes.Commands.CreateNote;
 using Notes.Tests.Common;
 using System.Threading;
