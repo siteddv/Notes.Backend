@@ -13,6 +13,7 @@ using Notes.WebApi.Middleware;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Options;
+using Notes.WebApi.Services;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Notes.WebApi
@@ -75,6 +76,9 @@ namespace Notes.WebApi
             });
 
             services.AddApiVersioning();
+
+            services.AddSingleton<ICurrentUserService, CurrentUserService>();
+            services.AddHttpContextAccessor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

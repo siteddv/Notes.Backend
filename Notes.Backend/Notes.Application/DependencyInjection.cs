@@ -1,8 +1,8 @@
-﻿using MediatR;
+﻿using FluentValidation;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
-using FluentValidation;
 using Notes.Application.Common.Behaviors;
+using System.Reflection;
 
 namespace Notes.Persistence
 {
@@ -14,7 +14,9 @@ namespace Notes.Persistence
 
             services.AddValidatorsFromAssemblies(new[] { Assembly.GetExecutingAssembly() });
 
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+            services.AddTransient(
+                typeof(IPipelineBehavior<,>),
+                typeof(ValidationBehavior<,>));
 
             return services;
         }

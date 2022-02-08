@@ -7,3 +7,4 @@
 /Notes.Identity/Notes.Identity/bin/Debug/net5.0
 *.jwk
 /Notes.Identity/Notes.Identity/Platinum.Auth.db
+*.txt
